@@ -1,0 +1,80 @@
+
+.courseCard{
+display:flex;
+flex-wrap:wrap;
+margin:40px;
+padding:10px 30px;
+align-items:center;
+justify-content:space-around;
+width:60%;
+border:1px solid black;
+
+border-radius:10px;
+transition: 0.2s ease-in-out;
+
+
+}
+
+.courseCard:hover{
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.cardHead{
+   display:flex;flex-basis:20%;
+   flex-wrap:wrap;
+   line-height:10px;
+   justify-content:space-between
+}
+
+.Allcourses{
+    margin-left:24%;
+    margin-top:-30px;
+}
+
+
+.courseSearch input{
+        height:30px !important;
+        width:400px !important;
+        border-radius:7px 0 0 7px;
+        padding-left:10px;
+        outline:none;
+        border:0.6px solid black;
+        border-right:none;
+        font-size:16px
+}
+
+.rating{
+    display: flex;
+    align-items: center;
+}
+
+.searchcourse{
+   display:flex;
+    justify-content:center;
+    position:fixed;
+    height:50px;
+    border-bottom:1px solid black;
+    z-index:3;
+    width:100%;
+    background-color: #7888de;
+    margin-bottom:20px;
+    padding:15px 0 10px 0
+    
+
+}
+.searchButton{
+    border:1px solid black !important;
+    border-radius:0 6px 6px 0 !important;
+    height:34px;
+    color:black !important;
+    background-color: rgb(245, 242, 242) !important;
+
+
+}
+.Searchform{
+    display: flex;
+    align-items: center;
+    
+
+}

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   return (
     <div>
-      <Link to = "http://localhost:3000/auth/signin">Login</Link>
+      <Link to = "/login">Login</Link>
     </div>
   );
 }

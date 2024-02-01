@@ -36,16 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.footer-container {
-  background-color: #000;
-  /* Black background */
-  color: #fff;
-  /* White text color */
-  padding: 10px;
-  /* Adjust the padding as needed */
-  text-align: center;
-
-  bottom: 0;
-  width: 100%;
-}
