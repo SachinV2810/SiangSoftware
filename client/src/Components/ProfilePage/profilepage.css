@@ -1,0 +1,98 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin-bottom: 100px;
+  }
+  
+  .profile-container {
+  
+    display: flex;
+    /* max-width: 90%; */
+    /* align-items: center; */
+    background-color: #F0F0F0;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  
+  .profile-left {
+    flex: 2;
+  
+    padding: 20px;
+    text-align: center;
+    border-right: 40px solid #F0F0F0;
+  }
+  
+  .profile-right {
+    flex: 5;
+    padding: 20px;
+    margin-left: 20px;
+  }
+  
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .user-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+    /* margin-top: 10px; */
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+  }
+  
+  .about-me,
+  .courses,
+  .projects {
+    font-size: 16px;
+    margin-bottom: 10px;
+    /* Reduced margin for better spacing */
+  }
+  
+  
+  a {
+    color: black;
+    text-decoration: none;
+    /* Optional: Remove underline */
+  }
+  
+  a:hover {
+    color: darkgray;
+    /* Optional: Change color on hover */
+  }
+  
+  .card {
+    background-color: #fff;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+    /* border-radius: 10px; */
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .contact-card {
+    border-top: 1px solid #F0F0F0;
+  }
