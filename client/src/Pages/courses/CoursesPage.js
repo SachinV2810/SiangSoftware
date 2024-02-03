@@ -13,6 +13,7 @@ export default function CoursePage({courses}){
   const [sortValue, setValue] = React.useState('');
   let [inputValue,setInputValue]=React.useState('');
   let [newCourse,setNewCourse]=React.useState(courses);
+  let [inputCourses,SetinputCourses]=React.useState([]);
   let courseName=[];
    const Rendercourse=newCourse.map((course)=>
         <CourseCard 
@@ -55,11 +56,37 @@ export default function CoursePage({courses}){
     console.log(arr);
     if(arr.length){
       setNewCourse(arr)
+      SetinputCourses(arr);
     }
    
 }
+let filterProject1=()=>{
+  if(inputCourses){
+  let onlineCourses=inputCourses.filter((project)=>project.online===true);
+  setNewCourse(onlineCourses);
+  }
+  if(!inputValue){
+    let onlineCourses=courses.filter((project)=>project.online===true);
+  setNewCourse(onlineCourses);
+  }
+  setValue('');
+}
+let filterProject2=()=>{
+ if(inputCourses){
+  let colcoursess=inputCourses.filter((project)=>project.college===true);
+  setNewCourse(colcoursess);
+  }
+  if(!inputValue){
+    let colcoursess=courses.filter((project)=>project.college===true);
+  setNewCourse(colcoursess);
+  }
+  setValue('');
+}
+
+
 React.useEffect(()=>{
   setNewCourse(courses);
+  SetinputCourses([]);
 },[inputValue])
     
     return(
@@ -83,9 +110,14 @@ React.useEffect(()=>{
             />
             <Button className="searchButton" color="primary" type="submit">Search</Button> 
           </form>
+          <div className="filtercourse">
+          <button onClick={filterProject1}>Online Courses</button>
+          <button onClick={filterProject2} >College Courses</button>
+
+        </div>
         </div>
           <Box >
-            <FormControl fullWidth sx={{backgroundColor:"white", maxWidth: 140 ,marginLeft:"30px",marginTop:"90px",borderRadius:"6px"}}>
+            <FormControl fullWidth sx={{backgroundColor:"white", maxWidth: 140 ,marginLeft:"30px",marginTop:"130px",borderRadius:"6px"}}>
               <InputLabel id="demo-simple-select-label">Sort By</InputLabel>
               <Select
                 labelId="demo-simple-select-label"

@@ -6,9 +6,8 @@ margin:40px;
 padding:10px 30px;
 align-items:center;
 justify-content:space-around;
-width:60%;
+width:90%;
 border:1px solid black;
-
 border-radius:10px;
 transition: 0.2s ease-in-out;
 
@@ -28,10 +27,9 @@ transition: 0.2s ease-in-out;
 }
 
 .Allcourses{
-    margin-left:24%;
     margin-top:-30px;
+    
 }
-
 
 .courseSearch input{
         height:30px !important;
@@ -77,4 +75,36 @@ transition: 0.2s ease-in-out;
     align-items: center;
     
 
+}
+.filtercourse{
+
+    display: flex;
+    width:100%;
+    position: absolute;
+    margin-top: 90px;
+    justify-content: flex-end;
+    
+    
+}
+
+.filtercourse button:nth-of-type(2){
+    background-color: green;
+    color: white;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.filtercourse button{
+    background-color: black;
+    color: white;
+    border: none;
+    width:120px;
+    height: 30px;
+    border-radius: 10px;
+
+
+}
+
+.filtercourse button:hover{
+    background-color: rgba(0,0,0,0.8);
 }

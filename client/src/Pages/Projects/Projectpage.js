@@ -41,14 +41,16 @@ const categories = [
 
 let [inputValue,setInputValue]=React.useState('');
 let [newProject,setNewProject]=React.useState(projects);
+let [inputProjects,SetInputProjects]=React.useState([]);
 const [sortValue, setValue] = React.useState('');
+
  const handleChange = (event) => {
     setValue(event.target.value);
   };
 
 
 React.useEffect(()=>{
-
+ 
   if(sortValue==='popular'){
     const sortedItems = [...newProject].sort((a, b) => a.reviews - b.reviews);
     setNewProject(sortedItems.reverse());
@@ -84,16 +86,43 @@ let handleSubmit=(e)=>{
 
     if(arr.length){
       setNewProject(arr)
+      SetInputProjects(arr);
     }
    
+}
 
 
+let filterProject1=()=>{
+  if(inputProjects){
+  let collProjects=inputProjects.filter((project)=>project.collaboration===true);
+  setNewProject(collProjects);
+  }
+  if(!inputValue){
+    let collProjects=projects.filter((project)=>project.collaboration===true);
+  setNewProject(collProjects);
+  }
+  setValue('');
+  
+}
+let filterProject2=()=>{
+ if(inputProjects){
+  let collProjects=inputProjects.filter((project)=>project.completed===true);
+  setNewProject(collProjects);
+  }
+  if(!inputValue){
+    let collProjects=projects.filter((project)=>project.completed===true);
+  setNewProject(collProjects);
+  }
+  setValue('');
 }
 
 React.useEffect(()=>{
   setNewProject(projects);
+  SetInputProjects([]);
   setValue('');
 },[inputValue])
+
+
 
 
 
@@ -101,7 +130,6 @@ React.useEffect(()=>{
     <>
         <div className="searchBar">
             <form onSubmit={handleSubmit} className="Searchform">
-
                 <Autocomplete
                     inputValue={inputValue}
                     onInputChange={(event, newInputValue) => {
@@ -129,12 +157,17 @@ React.useEffect(()=>{
         </form>
            
         </div>
+        <div className="filter">
+          <button onClick={filterProject1}>Collaboration</button>
+          <button onClick={filterProject2}>Completed</button>
+
+        </div>
             <br/>
             
             <div className="projectStyle">
-               {/* {inputValue && newProject.length?<p>Showing results for {inputValue} </p>:<p>Showing all Projects</p>} */}
+               {/* {filter?<p>Showing projects open for collaboration </p>:''} */}
             </div>
-                  <Box sx={{ maxWidth: 140 ,marginLeft:"30px",marginTop:"20px"}}>
+                  <Box sx={{ maxWidth: 140 ,marginLeft:"30px",marginTop:"30px"}}>
                       <FormControl fullWidth>
                         <InputLabel id="demo-simple-select-label">Sort By</InputLabel>
                         <Select

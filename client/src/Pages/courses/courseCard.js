@@ -10,7 +10,7 @@ export default function CourseCard({course}){
             </div>
             <div>
                 <Typography component="legend">&nbsp;Course Rating </Typography>
-                <div className='rating'>{course.rating}<Rating sx={{color:"#FFFF00"}}defaultValue={course.rating} precision={0.5} readOnly/></div>
+                <div className='rating'>{course.rating}<Rating defaultValue={course.rating} precision={0.5} readOnly/></div>
             </div>
             <div>
                 <a href={course.link}>Click to view Course</a>
