@@ -1,0 +1,51 @@
+.accordian {
+  margin: 60px auto;
+  width: 100%;
+  height: 10%;
+}
+.accordianHeading {
+  list-style: none;
+  margin: 20px;
+  width: 80%;
+  padding: 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.accordian li label {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+label::before {
+  content: "+";
+  margin-right: 10px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.content {
+  line-height: 20px;
+  padding: 0 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s, padding 0.5s;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.contentHead {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.accordian input[type="checkbox"]:checked + label + .content {
+  max-height: 200px;
+  padding: 5px 10px;
+}
